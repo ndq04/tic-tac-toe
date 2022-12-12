@@ -1,0 +1,8 @@
+const n = 4;
+const N = Math.pow(n, 2);
+const M = n * (N + 1) / 2;
+const keys = [...Array(N).keys()].map(x => x + 1);
+const uniqueTriples = new Combination(keys, n).toArray();
+const winningCombos = uniqueTriples.filter(
+(nums) => nums.reduce((acc, num) => acc + num) === M
+    );
